@@ -29,7 +29,7 @@ function Registerscreen() {
 
             try{
                     setloading(true)
-                    const result = await axios.post("/api/users/register",user).data 
+                    const result = await axios.post("https://happyrooms.herokuapp.com/api/users/register",user).data 
                     setloading(false)
                     setsuccess(true)
 

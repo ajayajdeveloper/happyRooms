@@ -36,7 +36,7 @@ export default function Homescreen({ match }) {
 
         try {
             setloading(true);
-            const data = await (await axios.post("/api/rooms/getroombyid" , { roomid: match.params.roomid })).data
+            const data = await (await axios.post("https://happyrooms.herokuapp.com/api/rooms/getroombyid" , { roomid: match.params.roomid })).data
             settotalamount(data.rentperday * totaldays)
             setroom(data);
             setloading(false);
@@ -71,7 +71,7 @@ export default function Homescreen({ match }) {
         try {
 
             setloading(true)
-            const result = await axios.post('/api/bookings/bookroom', bookingDetails)
+            const result = await axios.post('https://happyrooms.herokuapp.com/api/bookings/bookroom', bookingDetails)
             setloading(false)
             Swal.fire("congratulations","your Room booked successfully " , " success ").then(result=>{
                 window.location.href='/home'

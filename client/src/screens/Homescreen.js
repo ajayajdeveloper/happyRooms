@@ -28,7 +28,7 @@ export default function Homescreen() {
         try {
             setloading(true)
 
-            const data = (await axios.get("/api/rooms/getallrooms")).data
+            const data = (await axios.get("https://happyrooms.herokuapp.com/api/rooms/getallrooms")).data
 
 
             setrooms(data)

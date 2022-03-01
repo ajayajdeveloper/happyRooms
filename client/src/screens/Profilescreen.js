@@ -64,7 +64,7 @@ export function MyBookings() {
 
         try {
             setloading(true)
-            const data = await (await axios.post("api/bookings/getbookingsbyuserid/", { userid: user._id })).data
+            const data = await (await axios.post("https://happyrooms.herokuapp.com/api/bookings/getbookingsbyuserid/", { userid: user._id })).data
             console.log(data)
             setbookings(data)
             setloading(false)
@@ -80,7 +80,7 @@ export function MyBookings() {
     async function cancelBooking(bookingid, roomid) {
         try {
             setloading(true)
-            const result = await (await axios.post("/api/bookings/cancelbooking", { bookingid, roomid })).data
+            const result = await (await axios.post("https://happyrooms.herokuapp.com/api/bookings/cancelbooking", { bookingid, roomid })).data
             console.log(result)
             setloading(false)
 

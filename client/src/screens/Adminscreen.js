@@ -56,7 +56,7 @@ export function Bookings() {
 
         try {
 
-            const data = await (await axios.get("api/bookings/getallbookings")).data
+            const data = await (await axios.get("https://happyrooms.herokuapp.com/api/bookings/getallbookings")).data
             setbookings(data)
             setloading(false)
 
@@ -129,7 +129,7 @@ export function Rooms() {
 
         try {
 
-            const data = await (await axios.get("api/rooms/getallrooms")).data
+            const data = await (await axios.get("https://happyrooms.herokuapp.com/api/rooms/getallrooms")).data
             setrooms(data)
             setloading(false)
 
@@ -197,7 +197,7 @@ export function Users() {
     useEffect(async () => {
 
         try {
-            const data = await (await axios.get('/api/users/getallusers')).data
+            const data = await (await axios.get('https://happyrooms.herokuapp.com/api/users/getallusers')).data
             setusers(data)
             setloading(false)
         } catch (error) {
@@ -265,7 +265,7 @@ export function Addroom() {
         console.log(newroom)
         try {
             setloading(true)
-            const result =await ( await axios.post('/api/rooms/addroom' , newroom)).data
+            const result =await ( await axios.post('https://happyrooms.herokuapp.com/api/rooms/addroom' , newroom)).data
             setloading(false)
             Swal.fire("congratulations","your New Room Added successfully " , " success ").then(result => {
                 window.location.href="/home"
