@@ -63,9 +63,9 @@ function Registerscreen() {
 
                     {success && <Success message="registertion success" />}
 
-                    <div className='bs'>
+                    {/* <div className='bs'>
                         <h2>Register</h2>
-                        {/* <input  type="text"  placeholder="name"  className='form-control' 
+                        <input  type="text"  placeholder="name"  className='form-control' 
                       value={name} onChange={ (e) => {setname(e.target.value)}} autofocus  />
 
                       <input type="text" placeholder='email' className='form-control' 
@@ -75,9 +75,16 @@ function Registerscreen() {
                       value={password} onChange={ (e) => {setpassword(e.target.value)}} autofocus/>
 
                       <input type="text" placeholder='confirm password' className='form-control' 
-                      value={cpassword} onChange={ (e) => {setcpassword(e.target.value)}} autofocus/> */}
+                      value={cpassword} onChange={ (e) => {setcpassword(e.target.value)}} autofocus/>
+
+                        <button className='btn btn-primary mt-3' onClick={register}>Register</button>
+                    </div> */}
 
 
+                    <h2 className="text-center m-2" style={{ fontSize: "35px" }}>
+                        Register
+                    </h2>
+                    <div>
                         <input required type="text" placeholder="name" className="form-control mt-1" value={name} onChange={(e) => { setname(e.target.value) }} />
                         <input required type="text" placeholder="email" className="form-control mt-1" value={email} onChange={(e) => { setemail(e.target.value) }} />
                         <input
@@ -96,8 +103,9 @@ function Registerscreen() {
                             required
                             onChange={(e) => { setcpassword(e.target.value) }}
                         />
-
-                        <button className='btn btn-primary mt-3' onClick={register}>Register</button>
+                        <button onClick={register} className="btn btn-primary rounded-pill mt-3 mb-3">REGISTER</button>
+                        <br />
+                        <a style={{ color: 'black' }} href="/login">Click Here To Login</a>
                     </div>
 
                 </div>
