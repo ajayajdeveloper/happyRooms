@@ -69,13 +69,12 @@
 
 
 import React, { useState, useEffect } from "react";
-import {useDispatch , useSelector} from 'react-redux'
 import axios from "axios";
 import Error from "../components/Error";
 import Loader from "../components/Loader";
 import Success from "../components/Success";
 import Swal from 'sweetalert2'
-export default function Loginscreen() {
+ function Loginscreen() {
   
 
     const [email, setemail] = useState("");
@@ -101,7 +100,7 @@ export default function Loginscreen() {
     }
       try {
         setloading(true)
-        const result = await (await axios.post('/api/users/login',user)).data
+        const result = (await axios.post('https://happyrooms.herokuapp.com/api/users/login',user)).data
         localStorage.setItem('currentUser',JSON.stringify(result))
         window.location.href='/'
       } catch (error) {
@@ -143,4 +142,6 @@ export default function Loginscreen() {
         </div>
     )
 }
+
+export default Loginscreen;
 

@@ -93,12 +93,11 @@
 
 
 import React, { useState, useEffect } from "react";
-import {useDispatch , useSelector} from 'react-redux'
 import axios from "axios";
 import Error from "../components/Error";
 import Loader from "../components/Loader";
 import Success from '../components/Success'
-export default function Registerscreen() {
+function Registerscreen() {
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
@@ -121,7 +120,7 @@ export default function Registerscreen() {
           
           try {
             setloading(true)
-            const result = await axios.post('/api/users/register',user)
+            const result = await axios.post("https://happyrooms.herokuapp.com/api/users/register", user).data
             setloading(false)
             setsuccess(true)
             setemail('')
@@ -178,3 +177,5 @@ export default function Registerscreen() {
     </div>
   );
 }
+
+export default Registerscreen;
